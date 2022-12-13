@@ -21,8 +21,8 @@ if(isNaN(pwdLength)){
 //prompt for lowercase
 let lowercase = prompt("Do you want lowercase letters?", "yes/no");
 // console.log(lowercase);
-if(lowercase != "yes" || lowercase != "no"){
-  console.log("please type \'Yes\' or \'No\' ")
+if(lowercase !== "yes" || lowercase !== "no"){
+  console.log("please type \'yes\' or \'no\' ")
 }
 if(lowercase === "no"){
   lowercase = false;
@@ -36,7 +36,7 @@ if(lowercase === "no"){
 let uppercase = prompt("Do you want uppercase letters?", "yes/no");
 // console.log(lowercase);
 if(uppercase != "yes" || uppercase != "no"){
-  console.log("please type \'Yes\' or \'No\' ")
+  console.log("please type \'yes\' or \'no\' ")
 }
 if(uppercase === "no"){
   uppercase = false;
@@ -49,7 +49,7 @@ if(uppercase === "no"){
 let numeric = prompt("Do you want numeric values?", "yes/no");
 // console.log(lowercase);
 if(numeric != "yes" || numeric != "no"){
-  console.log("please type \'Yes\' or \'No\' ")
+  console.log("please type \'yes\' or \'no\' ")
 }
 if(numeric === "no"){
   numeric = false;
@@ -63,7 +63,7 @@ if(numeric === "no"){
 let specialChar = prompt("Do you want special characters?", "yes/no");
 // console.log(lowercase);
 if(specialChar != "yes" || specialChar != "no"){
-  console.log("please type \'Yes\' or \'No\' ")
+  console.log("please type \'yes\' or \'no\' ")
 }
 if(specialChar === "no"){
   specialChar = false;
@@ -74,32 +74,34 @@ if(specialChar === "no"){
 
 // console.log("password length after while loop: " + pwdLength);
 function generatePassword(){
-  var prePassword = [];
+  var prePassword = "";
+  
   console.log("This is inside the generatePassword function: " + lowercase);
+  console.log(alphabet).toLowerCase;
 
   if(lowercase){
-    for(var i = 0; i < pwdLength/4; i++){
-      prePassword.push(alphabet[Math.floor(Math.random() * 26)]).toLowerCase;
+    for(var i = 0; i < pwdLength; i++){
+      prePassword += (alphabet[Math.floor(Math.random() * alphabet.length)].toLowerCase);
       console.log(prePassword);
     }
   }else if(uppercase){
-    for(var i = 0; i < pwdLength/4; i++){
-      prePassword += alphabet[Math.floor(Math.random() * 26)];
+    for(var i = 0; i < pwdLength; i++){
+      prePassword += (alphabet[Math.floor(Math.random() * alphabet.length)]);
       console.log(prePassword);
     }
   }else if(numeric){
-    for(var i = 0; i < pwdLength/4; i++){
-      prePassword += numbers[Math.floor(Math.random() * 10)];
+    for(var i = 0; i < pwdLength; i++){
+      prePassword += (numbers[Math.floor(Math.random() * numbers.length)]);
       console.log(prePassword);
     }
   }else if(specialChar){
-    for(var i = 0; i < pwdLength/4; i++){
-      prePassword += specialCharacters[Math.floor(Math.random() * 32)];
+    for(var i = 0; i < pwdLength; i++){
+      prePassword += (specialCharacters[Math.floor(Math.random() * specialCharacters.length)]);
       console.log(prePassword);
     }
   }else {
-    for(var i = 0; i < pwdLength/4; i++){
-      prePassword.push(alphabet[Math.floor(Math.random() * 26)]).toLowerCase;
+    for(var i = 0; i < pwdLength; i++){
+      prePassword += (alphabet[Math.floor(Math.random() * 26)]).toLowerCase;
       console.log(prePassword);
     }
   }
