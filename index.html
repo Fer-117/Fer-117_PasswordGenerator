@@ -6,9 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Password Generator</title>
     <link rel="stylesheet" href="CSS/style.css" />
-  </head> 
+  </head>
   <body>
-    <div class="wrapper">
+    <div id="welcome" class="wrapper">
+      <h1>Welcome to Password Generator</h1>
+      <button id="start" class="btn" type="submit">
+        Click here to get started
+      </button>
+    </div>
+    <div id="passwordDiv" class="wrapper hide">
       <header>
         <h1>Password Generator</h1>
       </header>
@@ -29,8 +35,6 @@
         </div>
       </div>
     </div>
-    <script src="JS/script.js"></script>
-    <!-- <script src="JS/delete.js"></script> -->
-    <!-- <script src="JS/password.js"></script> -->
+    <script type="module" src="./JS/script.js"></script>
   </body>
 </html>
